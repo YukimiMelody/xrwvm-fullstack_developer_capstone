@@ -20,11 +20,9 @@ class Migration(migrations.Migration):
                  models.BigAutoField(auto_created=True,
                                      primary_key=True,
                                      serialize=False,
-                                     verbose_name='ID')
-                ),
+                                     verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
-                ('description', models.TextField()),
-            ],),
+                ('description', models.TextField()),],),
         migrations.CreateModel(
             name='CarModel',
             fields=[
@@ -32,8 +30,7 @@ class Migration(migrations.Migration):
                 models.BigAutoField(auto_created=True,
                                     primary_key=True,
                                     serialize=False,
-                                    verbose_name='ID')
-                ),
+                                    verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
                 ('type',
                  models.CharField(
@@ -42,20 +39,14 @@ class Migration(migrations.Migration):
                          ('SUV', 'SUV'),
                          ('WAGON', 'Wagon')],
                      default='SUV',
-                     max_length=10)
-                ),
+                     max_length=10)),
                 ('year',
                  models.IntegerField(
                      default=2023, 
                      validators=[
-                         django.core.validators.MaxValueValidator(2023), 
-                         django.core.validators.MinValueValidator(2015)
-                     ])),
-                ('car_make', 
+                         django.core.validators.MaxValueValidator(2023),
+                         django.core.validators.MinValueValidator(2015)])),
+                ('car_make',
                  models.ForeignKey(
-                     on_delete=django.db.models.deletion.CASCADE, 
-                     to='djangoapp.carmake')
-                ),
-            ],
-        ),
-    ]
+                     on_delete=django.db.models.deletion.CASCADE,
+                     to='djangoapp.carmake')),],),]
