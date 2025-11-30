@@ -27,10 +27,10 @@ class Migration(migrations.Migration):
             name='CarModel',
             fields=[
                 ('id',
-                models.BigAutoField(auto_created=True,
-                                    primary_key=True,
-                                    serialize=False,
-                                    verbose_name='ID')),
+                 models.BigAutoField(auto_created=True,
+                                     primary_key=True,
+                                     serialize=False,
+                                     verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
                 ('type',
                  models.CharField(
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
                      max_length=10)),
                 ('year',
                  models.IntegerField(
-                     default=2023, 
+                     default=2023,
                      validators=[
                          django.core.validators.MaxValueValidator(2023),
                          django.core.validators.MinValueValidator(2015)])),
